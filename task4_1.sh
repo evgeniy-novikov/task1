@@ -1,5 +1,5 @@
 #!/bin/bash
-echo '--- Hardware ---' >>task4_1.out
+echo '--- Hardware ---' >task4_1.out
 echo "CPU:" `dmidecode -s processor-version | uniq `>>task4_1.out
 echo "RAM:" `free -m -h | grep Mem | cut -d":" -f2 | awk '{print $1}'`>>task4_1.out
 echo "Motherboard:" `dmidecode -s baseboard-product-name`>>task4_1.out
