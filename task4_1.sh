@@ -3,7 +3,7 @@ echo '--- Hardware ---' >task4_1.out
 echo "CPU:" `dmidecode -s processor-version | uniq `>>task4_1.out
 echo "RAM:" `free -m -h | grep Mem | cut -d":" -f2 | awk '{print $1}'`>>task4_1.out
 echo "Motherboard:" `dmidecode -s baseboard-product-name`>>task4_1.out
-echo "System Serial Number:" `dmidecode -s system-serial-number`>>task4_1.out
+echo "System Serial Number:" `dmidecode -s baseboard-serial-number`>>task4_1.out
 echo '--- System ---'>>task4_1.out
 echo "OS Distribution:" `lsb_release -d -s`>>task4_1.out
 echo "Kernel version:" `uname -r`>>task4_1.out
