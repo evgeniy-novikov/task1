@@ -13,3 +13,9 @@ echo "Uptime:" `uptime | awk -F'( |,|:)+' '{if ($7=="min") m=$6; else {if ($7~/^
 echo "Processes running:" `ps -e | wc -l`>>task4_1.out
 echo "User logged in:" `who | wc -l`>>task4_1.out
 echo '--- Network ---'>>task4_1.out
+net_if=`ip -o a l | awk '{print "<"$2">:", $4}' `
+IFS=$'\n'
+    for i in $net_if
+        do
+        echo $i>>task4_1.out
+        done
